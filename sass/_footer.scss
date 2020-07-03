@@ -1,0 +1,62 @@
+.footer {
+  padding: 5rem 0 2rem;
+  grid-column: center-start / center-end;
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  align-content: center;
+  row-gap: 5rem;
+
+  &__heading {
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 10rem));
+    column-gap: 1rem;
+    justify-content: center;
+  }
+
+  &__item {
+    font-family: var(--font-logo);
+    font-size: 2.5rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    border: 5px solid red;
+    padding: 1rem 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--color-grey-dark);
+    transition: all 0.2s;
+  }
+
+  &__link:hover {
+    transform: translateY(-7px);
+    border: 5px solid transparent;
+    border-bottom: 5px solid red;
+  }
+
+  &__link:active {
+    transform: translateY(1px);
+    border: 5px solid transparent;
+    border-bottom: 5px solid red;
+  }
+
+  &__btn {
+    justify-self: center;
+  }
+
+  &__text {
+    font-family: var(--font-logo);
+    font-size: 1.5rem;
+    letter-spacing: 2rem;
+  }
+}

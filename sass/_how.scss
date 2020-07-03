@@ -1,0 +1,28 @@
+.how {
+  grid-column: center-start / center-end;
+  text-align: center;
+
+  &__heading {
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  &__red {
+    position: relative;
+  }
+
+  &__red > hr {
+    color: red;
+    background-color: red;
+    height: 0.8rem;
+    width: 89%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__btn {
+    margin-top: 2rem;
+  }
+}

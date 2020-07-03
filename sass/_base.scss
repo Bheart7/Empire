@@ -1,0 +1,40 @@
+:root {
+  // COLOR VARIABLES
+  --color-grey-dark: #222;
+  --color-light: #fff;
+  --color-primary--1: orange;
+  --color-primary--2: orangered;
+
+  // FONT VARIABLE
+  --font-primary: 'Nunito', sans-serif;
+  --font-logo: 'Europhonic', 'Nunito';
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: normal;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 100vh 90vh 65vh 85vh 1fr;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(max-content, 10rem) [col-end]
+    )
+    [center-end] minmax(3rem, 1fr) [full-end];
+}

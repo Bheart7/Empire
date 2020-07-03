@@ -1,0 +1,16 @@
+.header {
+  position: relative;
+  grid-column: full-start / full-end;
+  background-color: var(--color-light);
+  text-align: center;
+
+  &__heading {
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

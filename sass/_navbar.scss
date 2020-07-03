@@ -1,0 +1,66 @@
+.navbar {
+  z-index: 1000;
+  width: 100%;
+  padding: 0 5rem;
+  position: fixed;
+  background-color: var(--color-light);
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   var(--color-primary--1),
+  //   var(--color-primary--2)
+  // );
+  height: 15vh;
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  &__logo {
+    font-family: var(--font-logo);
+    letter-spacing: 0.5rem;
+    padding-left: 5rem;
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    display: block;
+    text-decoration: none;
+    color: var(--color-grey-dark);
+    transition: all 0.2s;
+  }
+
+  &__line {
+    color: var(--color-grey-dark);
+    visibility: hidden;
+    margin: 0 auto;
+    width: 0;
+    transition: all 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    transform: translateY(-2.5px) scale(1.25);
+  }
+  &__link:hover + &__line,
+  &__link:active + &__line {
+    visibility: visible;
+    width: 100%;
+    transform: scaleX(1.3);
+  }
+}
