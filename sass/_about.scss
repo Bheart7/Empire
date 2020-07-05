@@ -1,0 +1,49 @@
+.about {
+  grid-column: center-start / center-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include respond(tab-land) {
+    justify-content: center;
+  }
+
+  @include respond(big-desktop) {
+    justify-content: center;
+  }
+
+  &__heading {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+
+    @include respond(tab-land) {
+      margin-top: -5rem;
+    }
+
+    @include respond(big-desktop) {
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    width: 60rem;
+    word-break: normal;
+
+    @include respond(tab-land) {
+      font-size: 2.7rem;
+    }
+
+    @include respond(tab-port) {
+      width: 50rem;
+    }
+
+    @include respond(big-desktop) {
+      width: 68rem;
+    }
+  }
+}

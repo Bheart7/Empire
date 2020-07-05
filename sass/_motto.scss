@@ -1,0 +1,59 @@
+.motto {
+  padding-top: 3rem;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond(tab-land) {
+    text-align: center;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+
+    @include respond(laptop) {
+      font-size: 2rem;
+    }
+    @include respond(tab-land) {
+      font-size: 5rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+
+    @include respond(big-desktop) {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    width: 40rem;
+    word-break: normal;
+
+    @include respond(tab-land) {
+      width: 60rem;
+      font-size: 3rem;
+      text-align: center;
+      &:last-child {
+        margin-bottom: 10rem;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 50rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 2rem;
+  }
+}

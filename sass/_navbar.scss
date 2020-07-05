@@ -24,6 +24,43 @@
     font-weight: bolder;
   }
 
+  &__select {
+    display: block;
+    position: relative;
+  }
+
+  &__arrow {
+    display: none;
+    // border: 2px solid black;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+  }
+
+  &__options {
+    border-radius: 2rem;
+    display: none;
+    background-color: #fff;
+    padding: 1rem;
+    // border: 2px solid var(--color-grey-dark);
+    position: absolute;
+    top: 2.3rem;
+    right: -2.6rem;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+
+    // @include respond(big-desktop) {
+    //   top: 6rem;
+    //   right: 17rem;
+    // }
+  }
+
   &__list {
     list-style: none;
 
@@ -33,16 +70,27 @@
     align-items: center;
   }
 
+  &__list--2 {
+    list-style: none;
+  }
+
   &__item {
     font-size: 1.5rem;
   }
 
   &__link:link,
-  &__link:visited {
+  &__link:visited,
+  &__link--2:link,
+  &__link--2:visited {
     display: block;
     text-decoration: none;
     color: var(--color-grey-dark);
     transition: all 0.2s;
+  }
+
+  &__link:focus,
+  &__link--2:focus {
+    outline: none;
   }
 
   &__line {
@@ -53,14 +101,48 @@
     transition: all 0.2s;
   }
 
+  &__select > &__line {
+    display: none;
+  }
+
   &__link:hover,
   &__link:active {
     transform: translateY(-2.5px) scale(1.25);
   }
+
+  &__link--2:hover,
+  &__link__2:active {
+    transform: translateX(5px);
+    text-decoration: underline;
+  }
+
   &__link:hover + &__line,
   &__link:active + &__line {
     visibility: visible;
     width: 100%;
     transform: scaleX(1.3);
+  }
+
+  &__link:hover ~ &__options,
+  &__link:hover ~ &__options > &__arrow {
+    display: block;
+  }
+
+  &__options:hover,
+  &__arrow:hover {
+    display: block;
+  }
+
+  &__options:hover > &__arrow {
+    display: block;
+  }
+
+  &__select:hover &__options,
+  &__select:hover &__options > &__arrow {
+    display: block;
+  }
+
+  &__select > &__link {
+    cursor: context-menu;
   }
 }

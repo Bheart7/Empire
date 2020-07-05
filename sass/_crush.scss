@@ -1,0 +1,45 @@
+.crush {
+  margin-top: -5rem;
+  position: relative;
+  grid-column: full-start / full-end;
+  background-color: var(--color-light);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__heading {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  &__heading--2 {
+    font-family: 'Europhonic', 'Nunito';
+    font-size: 3.5rem;
+    letter-spacing: 0.7rem;
+    margin-bottom: 4rem;
+  }
+
+  &__red {
+    position: relative;
+  }
+
+  &__red > hr {
+    color: red;
+    background-color: red;
+    height: 0.8rem;
+    width: 90%;
+    position: absolute;
+    right: 2.2rem;
+    bottom: -0.2rem;
+
+    @include respond(big-desktop) {
+      width: 95%;
+      right: 1rem;
+    }
+  }
+}

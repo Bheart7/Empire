@@ -8,6 +8,11 @@
   justify-items: center;
   justify-content: center;
 
+  @include respond(phone) {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   &__heading {
     margin-top: 3rem;
     font-family: 'Europhonic', 'Nunito';
@@ -26,8 +31,17 @@
     height: 0.8rem;
     width: 84%;
     position: absolute;
+    left: 0;
     bottom: -5%;
     z-index: -1;
+
+    @include respond(tab-land) {
+      width: 90%;
+    }
+
+    @include respond(big-desktop) {
+      width: 90%;
+    }
   }
 
   &__frame {
@@ -43,9 +57,38 @@
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0px 0px 10px rgba(34, 34, 34, 0.5);
+
+    @include respond(tab-land) {
+      top: -6%;
+      width: 390px;
+      height: 390px;
+    }
+
+    @include respond(laptop) {
+      top: -5%;
+    }
+
+    @include respond(tab-port) {
+      width: 380px;
+      height: 380px;
+      top: -25%;
+    }
+    @include respond(phone) {
+      width: 220px;
+      height: 220px;
+      top: 16%;
+    }
+
+    @include respond(big-desktop) {
+      top: -3%;
+      width: 550px;
+      height: 550px;
+    }
   }
 
   &__video {
+    width: 100%;
+    height: 100%;
     display: block;
     margin: 0.5rem auto;
     clip-path: circle(12.2rem at 50% 50%);

@@ -21,6 +21,16 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+
+  @include respond(tab-land) {
+    font-size: 90%;
+  }
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(big-desktop) {
+    font-size: 130%;
+  }
 }
 
 body {
@@ -31,6 +41,58 @@ body {
 .wrapper {
   display: grid;
   grid-template-rows: 100vh 90vh 65vh 85vh 1fr;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(max-content, 10rem) [col-end]
+    )
+    [center-end] minmax(3rem, 1fr) [full-end];
+
+  @include respond(tab-land) {
+    grid-template-rows: 100vh 70vh 45vh 80vh 1fr;
+  }
+
+  @include respond(phone) {
+    grid-template-rows: 100vh 70vh 70vh 80vh 1fr;
+  }
+}
+
+.aboutWrapper {
+  display: grid;
+  grid-template-rows: 100vh 90vh 1fr;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(max-content, 10rem) [col-end]
+    )
+    [center-end] minmax(3rem, 1fr) [full-end];
+
+  @include respond(tab-land) {
+    grid-template-rows: 100vh 3fr 1fr;
+  }
+
+  @include respond(big-desktop) {
+    grid-template-rows: 100vh 70vh 1fr;
+  }
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-rows: 100vh 90vh 1fr;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(max-content, 10rem) [col-end]
+    )
+    [center-end] minmax(3rem, 1fr) [full-end];
+
+  @include respond(phone) {
+    grid-template-rows: 100vh 1fr;
+  }
+}
+.crushWrapper {
+  display: grid;
+  grid-template-rows: 100vh 3fr 0.7fr;
   grid-template-columns:
     [full-start] minmax(3rem, 1fr) [center-start] repeat(
       8,

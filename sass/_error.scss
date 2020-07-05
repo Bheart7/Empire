@@ -1,8 +1,13 @@
-.what {
-  grid-column: center-start / center-end;
+.error {
   text-align: center;
+  grid-column: center-start / center-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__heading {
+    margin-bottom: 2rem;
     font-family: 'Europhonic', 'Nunito';
     font-size: 5rem;
     letter-spacing: 0.5rem;
@@ -16,14 +21,10 @@
     color: red;
     background-color: red;
     height: 0.8rem;
-    width: 85%;
+    width: 88%;
     position: absolute;
-    right: 2.2rem;
-    bottom: 0;
+    left: 0;
+    bottom: -5%;
     z-index: -1;
-  }
-
-  &__btn {
-    margin-top: 2.5rem;
   }
 }
